@@ -1,0 +1,226 @@
+/*
+Theme Name: Piraten
+Theme URI: http://www.ott.net/
+Description: Piratenpartei.ch design
+Author: Stefan Ott
+Author URI: http://www.ott.net/
+Template: twentyten
+Version: 0.2
+*/
+ 
+@import url("../twentyten/style.css");
+
+body {
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
+	background-color: #d78215;
+	margin-top: 0;
+}
+
+#access .menu-header,
+#access,
+div.menu,
+#colophon,
+#branding,
+#main,
+#wrapper {
+	width: 968px;
+}
+
+#wrapper {
+	margin-top: 0;
+}
+
+#primary {
+	padding-left: 20px;
+	padding-top: 40px;
+}
+
+#main {
+	padding-top: 0;
+}
+
+#pageend {
+	background-image: url('images/bgfot.jpg');
+	background-repeat: repeat-x;
+	height: 124px;
+	background-color: #d78215;
+	margin-top: 50px;
+	padding-top: 10px;
+}
+
+#pageend .content {
+	width: 920px;
+	margin: 0 auto;
+	background-image: url('images/cc-low.png');
+	background-repeat: no-repeat;
+	padding-left: 40px;
+}
+
+#site-title, #site-description {
+	display: none;
+}
+
+#header {
+	background: none;
+	padding: 0;
+}
+
+#branding img {
+	border: 0;
+}
+
+#wrapper {
+	background: transparent;
+}
+
+#main {
+	background-image: url('images/content-bg.png');
+}
+
+#content {
+	padding-top: 40px;
+}
+
+#colophon {
+	border-top: none;
+}
+
+a:link, a:visited {
+	color: #a57f57;
+}
+
+#pageend a, #pageend {
+	color: #984508;
+	font-size: x-small;
+	line-height: 160%;
+}
+
+h3.widget-title {
+	color: #a57f57;
+	text-transform: uppercase;
+	font-size: small;
+}
+
+#piratenpage {
+	background-color: #EEB50C;
+	background-image: url('images/bgmid.jpg');
+	background-repeat: repeat-x;
+}
+
+#endcontent {
+	background-image: url('images/boderfot.png');
+	height: 4px;
+}
+
+#premenu {
+	background-image: url('images/bodertop.png');
+	height: 4px;
+}
+
+#access {
+	background: transparent;
+	background-image: url('images/navline-vert.png');
+	background-position: 0 0;
+	background-repeat: repeat-y;
+}
+
+#access .menu li a {
+	color: white;
+}
+
+#access li:hover > a,
+#access ul ul :hover > a {
+        background-color: transparent;
+        color: black;
+}
+
+.orange {
+	background-color: #d78215;
+}
+
+#access .menu li {
+	width: 180px;
+	height: 58px;
+/*	background-repeat: no-repeat;*/
+	text-transform: uppercase;
+	padding-left: 4px;
+/*	padding: 8px 0 0 55px;
+	text-transform: uppercase;
+	background-position: 2px -2px;*/
+}
+
+#access .menu li.first {
+	width: 36px;
+	padding: 0;
+}
+
+#access .menu li.first img {
+	position: relative;
+	top: 5px;
+	left: -7px;
+}
+
+/*#access li #homebutton {
+	background-image: url('images/hnavico_home.png');
+	background-repeat: no-repeat;
+	background-position: 2px 16px;
+}
+
+#access li #homebutton:hover {
+	background-image: url('images/hnavico_home_h.png');
+	background-repeat: no-repeat;
+}*/
+
+/*#access li.current_page_item:hover > a {
+	color: black;
+}*/
+
+#content tr td {
+	border-top: none;
+}
+
+#access li img {
+	vertical-align: middle;
+	float: left;
+}
+
+#access li a {
+	float: left;
+	padding-top: 10px;
+}
+
+#access li {
+	/* background-image: url('images/hnavbg.png'); */
+}
+
+#access ul.children li a {
+	padding-top: 0;
+	display: block;
+	top: 0;
+	/* border: 1px red solid; */
+}
+
+#access ul.children li {
+	height: 22px;
+	background-color: #333333;
+	text-transform: none;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#access ul ul.children {
+	top: 58px;
+}
+
+#access ul ul a {
+	padding: 0;
+}
+
+/*#ship {
+	background-image:url(/wp-content/themes/piraten/images/bgship.png);
+	background-repeat: no-repeat;
+	background-position: 685px 1px;
+	height: 100px;
+	position: absolute;
+	top: 0;
+}*/
