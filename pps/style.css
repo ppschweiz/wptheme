@@ -1,11 +1,11 @@
 /*
-Theme Name: Piraten
-Theme URI: http://www.ott.net/
-Description: Piratenpartei.ch design
+Theme Name: PPS
+Theme URI: http://dev.piratenpartei.ch/svn/wptheme/trunk/
+Description: Pirate Party Switzerland
 Author: Stefan Ott
 Author URI: http://www.ott.net/
 Template: twentyten
-Version: 0.2
+Version: 0.3.0-dev
 */
  
 @import url("../twentyten/style.css");
@@ -217,7 +217,7 @@ h3.widget-title {
 }
 
 /*#ship {
-	background-image:url(/wp-content/themes/piraten/images/bgship.png);
+	background-image:url(/wp-content/themes/pps/images/bgship.png);
 	background-repeat: no-repeat;
 	background-position: 685px 1px;
 	height: 100px;

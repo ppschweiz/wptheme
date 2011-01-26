@@ -56,15 +56,15 @@
 <div id="piratenpage">
 
 <!-- <div id="ship"></div>-->
-<!--	<div style="position: absolute; left: 685px; top: 11px; height: 98px; width: 85px; background-image:url(/wp-content/themes/piraten/images/bgship.png)" />&nbsp;</div>-->
+<!--	<div style="position: absolute; left: 685px; top: 11px; height: 98px; width: 85px; background-image:url(/wp-content/themes/pps/images/bgship.png)" />&nbsp;</div>-->
 
 <div id="wrapper" class="hfeed">
 	<div id="header">
 		<div id="masthead">
-			<!--<div id="branding" role="banner" style="background-image:url(/wp-content/themes/piraten/images/bgship.png); background-repeat: no-repeat; background-position: 685px 1px">-->
+			<!--<div id="branding" role="banner" style="background-image:url(/wp-content/themes/pps/images/bgship.png); background-repeat: no-repeat; background-position: 685px 1px">-->
 			<div id="branding" role="banner">
-				<!--<div style="position: absolute; left: 685px; top: 11px"><img src="/wp-content/themes/piraten/images/bgship.png" /></div>-->
-				<!--<div style="position: absolute; left: 685px; top: 11px; height: 98px; width: 85px; background-image:url(/wp-content/themes/piraten/images/bgship.png)" />&nbsp;</div>-->
+				<!--<div style="position: absolute; left: 685px; top: 11px"><img src="/wp-content/themes/pps/images/bgship.png" /></div>-->
+				<!--<div style="position: absolute; left: 685px; top: 11px; height: 98px; width: 85px; background-image:url(/wp-content/themes/pps/images/bgship.png)" />&nbsp;</div>-->
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 				<<?php echo $heading_tag; ?> id="site-title">
 					<span>
