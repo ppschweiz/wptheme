@@ -1,4 +1,6 @@
 <?php
+require_once(get_stylesheet_directory() . '/theme-options.php');
+
 define( 'HEADER_IMAGE', sprintf('%s/images/de.png', get_stylesheet_directory_uri()));
 define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 365 ) );
 define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 116 ) );
@@ -60,4 +62,5 @@ register_default_headers(array(
 		'description' => 'Sektion Z&uuml;rich'
 	)
 ));
+
 ?>

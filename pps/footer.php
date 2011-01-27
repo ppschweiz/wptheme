@@ -9,6 +9,22 @@
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
+
+	$options = get_option('pps_theme_options');
+	print_r($options);
+
+	if (array_key_exists('lang', $options) && $options['lang'] != '' && 0) {
+		$lang = $options['lang'];
+	} else {
+		$locale = get_locale();
+		$llang = substr($locale, 0, 2);
+
+		if (in_array($llang, array('de', 'fr'))) {
+			$lang = $llang;
+		} else {
+			$lang = 'de';
+		}
+	}
 ?>
 	</div><!-- #main -->
 	<div id="endcontent">&nbsp;</div>
@@ -17,7 +33,11 @@
 	<div id="pageend">
 		<div class="content">
 			<div style="float: right">Powered by <a href="http://wordpress.org/">WordPress</a></div>
+<?php	if ($lang == 'fr') { ?>
+			Design: <a href="http://www.partipirate.ch/">Parti Pirate Suisse</a><br />
+<?php	} else { ?>
 			Design: <a href="http://www.piratenpartei.ch/">Piratenpartei Schweiz</a><br />
+<?php	} ?>
 			<a href="http://creativecommons.org/licenses/by/2.5/ch/deed.de">CC-BY 2.5 Schweiz</a>
 		</div>
 	</div>
