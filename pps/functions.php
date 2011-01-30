@@ -1,7 +1,7 @@
 <?php
 require_once(get_stylesheet_directory() . '/theme-options.php');
 
-define( 'HEADER_IMAGE', sprintf('%s/images/de.png', get_stylesheet_directory_uri()));
+define( 'HEADER_IMAGE', sprintf('%s/images/header-de.png', get_stylesheet_directory_uri()));
 define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 365 ) );
 define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 116 ) );
 
@@ -55,6 +55,11 @@ register_default_headers(array(
 		'url' =>  sprintf('%s/images/header-fr.png', get_stylesheet_directory_uri()),
 		'thumbnail_url' => sprintf('%s/images/header-fr-thumbnail.png', get_stylesheet_directory_uri()),
 		'description' => 'Parti Pirate'
+	),
+	'de' => array(
+		'url' =>  sprintf('%s/images/header-de.png', get_stylesheet_directory_uri()),
+		'thumbnail_url' => sprintf('%s/images/header-de-thumbnail.png', get_stylesheet_directory_uri()),
+		'description' => 'Piratenpartei'
 	),
 	'ag' => array(
 		'url' => sprintf('%s/images/header-aargau.png', get_stylesheet_directory_uri()),
