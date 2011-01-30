@@ -63,7 +63,7 @@ register_default_headers(array(
 	),
 	'zh' => array(
 		'url' => sprintf('%s/images/header-zuerich.png', get_stylesheet_directory_uri()),
-		'thumbnail_url' => sprintf('%s/images/header-aargau-thumbnail.png', get_stylesheet_directory_uri()),
+		'thumbnail_url' => sprintf('%s/images/header-zuerich-thumbnail.png', get_stylesheet_directory_uri()),
 		'description' => 'Sektion Z&uuml;rich'
 	)
 ));
