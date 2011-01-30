@@ -12,8 +12,8 @@
 
 	$options = get_option('pps_theme_options');
 
-	if (is_array($option) && array_key_exists('lang', $options) && 
-		$options['lang'] != '' && 0)
+	if (is_array($options) && array_key_exists('lang', $options) && 
+		$options['lang'] != '')
 	{
 		$lang = $options['lang'];
 	} else {
