@@ -7,15 +7,15 @@ define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 1
 
 function change_home2($menu_text) {
 	return preg_replace(
-		'/"><a href=".*" title="Home">Home/',
-		' first"><a href="' . site_url() . '" title="Home"><img src="/wp-content/themes/pps/images/hnavico_home.png" />',
+		'/"><a href=".*" title=".*">(Home|Accueil)/',
+		" first\"><a href=\"" . site_url() . "\" title=\"$1\"><img src=\"/wp-content/themes/pps/images/hnavico_home.png\" />",
 		$menu_text);
 }
 
 function change_home($menu_text) {
 	return preg_replace(
-		'/ ><a href=".*" title="Home">Home/',
-		' class="first"><a href="' . site_url() . '" title="Home"><img src="/wp-content/themes/pps/images/hnavico_home.png" />',
+		'/ ><a href=".*" title=".*">(Home|Accueil)/',
+		" class=\"first\"><a href=\"" . site_url() . "\" title=\"$1\"><img src=\"/wp-content/themes/pps/images/hnavico_home.png\" />",
 		$menu_text);
 }
 
@@ -51,6 +51,11 @@ add_filter('wp_page_menu', 'change_home2');
 add_filter('wp_page_menu', 'add_icons');
 
 register_default_headers(array(
+	'fr' => array(
+		'url' =>  sprintf('%s/images/header-fr.png', get_stylesheet_directory_uri()),
+		'thumbnail_url' => sprintf('%s/images/header-fr-thumbnail.png', get_stylesheet_directory_uri()),
+		'description' => 'Parti Pirate'
+	),
 	'ag' => array(
 		'url' => sprintf('%s/images/header-aargau.png', get_stylesheet_directory_uri()),
 		'thumbnail_url' => sprintf('%s/images/header-aargau-thumbnail.png', get_stylesheet_directory_uri()),
