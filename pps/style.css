@@ -4,223 +4,403 @@ Theme URI: https://dev.piratenpartei.ch/projects/wptheme/
 Description: Pirate Party Switzerland
 Author: Stefan Ott
 Author URI: http://www.ott.net/
-Template: twentyten
-Version: 0.3.0-dev
+Version: 0.3.0-dev2
 */
- 
-@import url("../twentyten/style.css");
+/*
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}*/
 
 body {
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
 	background-color: #d78215;
-	margin-top: 0;
-}
-
-#access .menu-header,
-#access,
-div.menu,
-#colophon,
-#branding,
-#main,
-#wrapper {
-	width: 968px;
-}
-
-#wrapper {
-	margin-top: 0;
-}
-
-#primary {
-	padding-left: 20px;
-	padding-top: 40px;
-}
-
-#main {
-	padding-top: 0;
-}
-
-#pageend {
-	background-image: url('images/bgfot.jpg');
-	background-repeat: repeat-x;
-	height: 124px;
-	background-color: #d78215;
-	margin-top: 50px;
-	padding-top: 10px;
-}
-
-#pageend .content {
-	width: 920px;
-	margin: 0 auto;
-	background-image: url('images/cc-low.png');
-	background-repeat: no-repeat;
-	padding-left: 40px;
-}
-
-#site-title, #site-description {
-	display: none;
-}
-
-#header {
-	background: none;
-	padding: 0;
-}
-
-#branding img {
-	border: 0;
-}
-
-#wrapper {
-	background: transparent;
-}
-
-#main {
-	background-image: url('images/content-bg.png');
-}
-
-#content {
-	padding-top: 40px;
-}
-
-#colophon {
-	border-top: none;
+	margin: 0;
+	font-size: small;
 }
 
 a:link, a:visited {
 	color: #a57f57;
 }
 
-#pageend a, #pageend {
-	color: #984508;
-	font-size: x-small;
-	line-height: 160%;
+h1 {
+	font-size: x-large;
 }
 
-h3.widget-title {
-	color: #a57f57;
-	text-transform: uppercase;
-	font-size: small;
+input[type="text"],
+textarea {
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	padding: 2px;
 }
 
-#piratenpage {
+#content h2 {
+	font-size: x-large;
+	font-weight: normal;
+	margin-top: 50px;
+}
+
+#page {
 	background-color: #EEB50C;
 	background-image: url('images/bgmid.jpg');
 	background-repeat: repeat-x;
 }
 
-#endcontent {
-	background-image: url('images/boderfot.png');
-	height: 4px;
+#main,
+#header {
+	margin: 0 auto;
+	width: 968px;
 }
+
+#main {
+	background-image: url('images/content-bg.png');
+	margin-top: 0;
+	border-top: none;
+	padding-top: 20px;
+}
+
+#content {
+	padding: 0 20px;
+	width: 666px;
+}
+
+#ship {
+	position: absolute;
+	left: 685px;
+	top: 11px;
+	height: 98px;
+	width: 85px;
+	z-index: 10;
+}
+
+img.logo {
+	position: relative;
+	z-index: 20;
+}
+
+
+/* the navigation menu */
 
 #premenu {
 	background-image: url('images/bodertop.png');
 	height: 4px;
 }
 
-#access {
-	background: transparent;
+div#navigation {
+	padding: 0 4px;
+	margin: 0;
 	background-image: url('images/navline-vert.png');
-	background-position: 0 0;
-	background-repeat: repeat-y;
 }
 
-#access .menu li a {
+div.menu {
+	background-image: url('images/hnavbg.png');
+	height: 90px;
+}
+
+div.menu > ul {
+	background-image: url('images/navline-vert-dividers.png');
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+
+	padding-left: 5px;
+}
+
+div.menu ul li.home {
+	width: 50px;
+	padding-top: 13px;
+	text-align: center;
+}
+
+div.menu ul li {
+	width: 184px;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+div.menu > ul > li > a {
 	color: white;
-}
-
-#access li:hover > a,
-#access ul ul :hover > a {
-        background-color: transparent;
-        color: black;
-}
-
-.orange {
-	background-color: #d78215;
-}
-
-#access .menu li {
-	width: 180px;
-	height: 58px;
-/*	background-repeat: no-repeat;*/
+	text-decoration: none;
 	text-transform: uppercase;
-	padding-left: 4px;
-/*	padding: 8px 0 0 55px;
-	text-transform: uppercase;
-	background-position: 2px -2px;*/
-}
-
-#access .menu li.first {
-	width: 36px;
-	padding: 0;
-}
-
-#access .menu li.first img {
 	position: relative;
-	top: 5px;
-	left: -7px;
 }
 
-/*#access li #homebutton {
-	background-image: url('images/hnavico_home.png');
-	background-repeat: no-repeat;
-	background-position: 2px 16px;
+div.menu ul li a:hover {
+	color: #333333;
 }
 
-#access li #homebutton:hover {
-	background-image: url('images/hnavico_home_h.png');
-	background-repeat: no-repeat;
-}*/
-
-/*#access li.current_page_item:hover > a {
-	color: black;
-}*/
-
-#content tr td {
-	border-top: none;
-}
-
-#access li img {
+div.menu ul li img {
 	vertical-align: middle;
-	float: left;
+	position: relative;
+	left: -4px;
 }
 
-#access li a {
-	float: left;
-	padding-top: 10px;
+div.menu ul.children,
+div.menu ul.sub-menu {
+	list-style: none;
+	padding: 0 0 0 59px;
 }
 
-#access li {
-	/* background-image: url('images/hnavbg.png'); */
+div.menu ul.children a,
+div.menu ul.sub-menu a {
+	color: white;
+	text-decoration: none;
 }
 
-#access ul.children li a {
-	padding-top: 0;
-	display: block;
-	top: 0;
-	/* border: 1px red solid; */
+div.menu ul.children li,
+div.menu ul.sub-menu li {
+	background-image: url('images/hnav-subpfeile.png');
+	background-repeat: no-repeat;
+	padding-left: 7px;
+	background-position: 0 4px;
 }
 
-#access ul.children li {
-	height: 22px;
-	background-color: #333333;
-	text-transform: none;
-	padding-top: 10px;
-	padding-left: 10px;
+div.menu ul.children li:hover,
+div.menu ul.sub-menu li:hover {
+	background-position: 0 -17px;
 }
 
-#access ul ul.children {
-	top: 58px;
+/* the sidebar */
+
+#sidebar {
+	float: right;
+	width: 230px;
 }
 
-#access ul ul a {
+#sidebar a {
+	text-decoration: none;
+}
+
+#sidebar a:hover {
+	color: #695037;
+}
+
+#sidebar h3
+{
+	font-size: small;
+	text-transform: uppercase;
+	color: #a57f57;
+	margin-bottom: 2px;
+}
+
+#sidebar > ul {
+	list-style: none;
+	padding: 0;
+}
+#sidebar > ul > li {
+	padding-top: 5px;
+}
+
+#sidebar li > ul {
+	color: #666666;
+	list-style: square;
+	list-style-position: inside;
 	padding: 0;
 }
 
-/*#ship {
-	background-image:url(/wp-content/themes/pps/images/bgship.png);
-	background-repeat: no-repeat;
-	background-position: 685px 1px;
-	height: 100px;
+#sidebar li > ul > li {
+	padding: 2px;
+}
+
+#searchform label {
+	display: none;
+}
+
+#searchform input#s {
+	width: 120px;
+}
+
+/* =Comments
+-------------------------------------------------------------- */
+#comments {
+	clear: both;
+}
+#comments .navigation {
+	padding: 0 0 18px 0;
+}
+h3#comments-title,
+h3#reply-title {
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+h3#comments-title {
+	padding: 24px 0;
+}
+.commentlist {
+	list-style: none;
+	margin: 0;
+}
+.commentlist li.comment {
+	border-bottom: 1px solid #e7e7e7;
+	line-height: 24px;
+	margin: 0 0 24px 0;
+	padding: 0 0 0 56px;
+	position: relative;
+}
+.commentlist li:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+#comments .comment-body ul,
+#comments .comment-body ol {
+	margin-bottom: 18px;
+}
+#comments .comment-body p:last-child {
+	margin-bottom: 6px;
+}
+#comments .comment-body blockquote p:last-child {
+	margin-bottom: 24px;
+}
+.commentlist ol {
+	list-style: decimal;
+}
+.commentlist .avatar {
 	position: absolute;
-	top: 0;
-}*/
+	top: 4px;
+	left: 0;
+}
+.comment-author {
+}
+.comment-author cite {
+	color: #000;
+	font-style: normal;
+	font-weight: bold;
+}
+.comment-author .says {
+	font-style: italic;
+}
+.comment-meta {
+	font-size: 12px;
+	margin: 0 0 18px 0;
+}
+.comment-meta a:link,
+.comment-meta a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.comment-meta a:active,
+.comment-meta a:hover {
+	color: #ff4b33;
+}
+.commentlist .even {
+}
+.commentlist .bypostauthor {
+}
+.reply {
+	font-size: 12px;
+	padding: 0 0 24px 0;
+}
+.reply a,
+a.comment-edit-link {
+	color: #888;
+}
+.reply a:hover,
+a.comment-edit-link:hover {
+	color: #ff4b33;
+}
+.commentlist .children {
+	list-style: none;
+	margin: 0;
+}
+.commentlist .children li {
+	border: none;
+	margin: 0;
+}
+.nopassword,
+.nocomments {
+	display: none;
+}
+#comments .pingback {
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 18px;
+	padding-bottom: 18px;
+}
+.commentlist li.comment+li.pingback {
+	margin-top: -6px;
+}
+#comments .pingback p {
+	color: #888;
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+}
+#comments .pingback .url {
+	font-size: 13px;
+	font-style: italic;
+}
+
+/* Comments form */
+input[type=submit] {
+	color: #333;
+}
+#respond {
+	border-top: 1px solid #e7e7e7;
+	margin: 24px 0;
+	overflow: hidden;
+	position: relative;
+}
+#respond p {
+	margin: 0;
+}
+#respond .comment-notes {
+	margin-bottom: 1em;
+}
+.form-allowed-tags {
+	line-height: 1em;
+}
+.children #respond {
+	margin: 0 48px 0 0;
+}
+h3#reply-title {
+	margin: 18px 0;
+}
+#comments-list #respond {
+	margin: 0 0 18px 0;
+}
+#comments-list ul #respond {
+	margin: 0;
+}
+#cancel-comment-reply-link {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 18px;
+}
+#respond .required {
+	color: #ff4b33;
+	font-weight: bold;
+}
+#respond label {
+	color: #888;
+	font-size: 12px;
+}
+#respond input {
+	margin: 0 0 9px;
+	width: 98%;
+}
+#respond textarea {
+	width: 98%;
+}
+#respond .form-allowed-tags {
+	color: #888;
+	font-size: 12px;
+	line-height: 18px;
+}
+#respond .form-allowed-tags code {
+	font-size: 11px;
+}
+#respond .form-submit {
+	margin: 12px 0;
+}
+#respond .form-submit input {
+	font-size: 14px;
+	width: auto;
+}

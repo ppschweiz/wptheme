@@ -1,76 +1,152 @@
 <?php
-require_once(get_stylesheet_directory() . '/theme-options.php');
 
-define( 'HEADER_IMAGE', sprintf('%s/images/header-de.png', get_stylesheet_directory_uri()));
-define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 365 ) );
-define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 116 ) );
+//
+// i18n
+//
 
-function change_home2($menu_text) {
-	return preg_replace(
-		'/"><a href=".*" title=".*">(Home|Accueil)/',
-		" first\"><a href=\"" . site_url() . "\" title=\"$1\"><img src=\"/wp-content/themes/pps/images/hnavico_home.png\" />",
-		$menu_text);
-}
+// Make theme available for translation
+load_theme_textdomain( 'twentyten', TEMPLATEPATH . '/languages' );
 
-function change_home($menu_text) {
-	return preg_replace(
-		'/ ><a href=".*" title=".*">(Home|Accueil)/',
-		" class=\"first\"><a href=\"" . site_url() . "\" title=\"$1\"><img src=\"/wp-content/themes/pps/images/hnavico_home.png\" />",
-		$menu_text);
-}
+// Load the language files
+$locale = get_locale();
+$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+if (is_readable($locale_file))
+	require_once($locale_file);
 
-function add_icons($menu_text) {
+//
+// Stuff that concerns the navigation menu
+//
+
+register_nav_menus( array(
+	'primary' => __('Primary Navigation', 'PPS'),
+));
+
+// Enable post thumbnails
+add_theme_support('post-thumbnails');
+
+// Add post thumbnails as icons in the menu
+function addMenuIcons($menu_text) {
 	$pages = get_pages(array(
 		'depth' => 0,
 	));
 
 	foreach ($pages as $page) {
 		$id = $page->ID;
+		$title = $page->post_title;
 
 		$icon = get_the_post_thumbnail($id);
 		if ($icon != '') {
 			$menu_text = preg_replace(
-				"/page-item-$id\">/",
-				"page-item-$id\">$icon",
-				$menu_text);
-			$menu_text = preg_replace(
-				"/page-item-$id current_page_ancestor current_page_parent\"><a/",
-				"page-item-$id current_page_ancestor current_page_parent\">$icon<a",
-				$menu_text);
-			$menu_text = preg_replace(
-				"/page-item-$id current_page_item\"><a/",
-				"page-item-$id current_page_item\">$icon<a",
+				"/>$title</",
+				">$icon$title<",
 				$menu_text);
 		}
 	}
 	return $menu_text;
 }
+add_filter('wp_nav_menu', 'addMenuIcons');
+add_filter('wp_page_menu', 'addMenuIcons');
 
-add_filter('wp_page_menu', 'change_home');
-add_filter('wp_page_menu', 'change_home2');
-add_filter('wp_page_menu', 'add_icons');
+// Add the home link to the menu
+function new_nav_menu_items($items) {
+	$img = sprintf('%s/images/hnavico_home.png',
+		get_stylesheet_directory_uri());
+	$url = home_url( '/' );
 
-register_default_headers(array(
-	'fr' => array(
-		'url' =>  sprintf('%s/images/header-fr.png', get_stylesheet_directory_uri()),
-		'thumbnail_url' => sprintf('%s/images/header-fr-thumbnail.png', get_stylesheet_directory_uri()),
-		'description' => 'Parti Pirate'
-	),
-	'de' => array(
-		'url' =>  sprintf('%s/images/header-de.png', get_stylesheet_directory_uri()),
-		'thumbnail_url' => sprintf('%s/images/header-de-thumbnail.png', get_stylesheet_directory_uri()),
-		'description' => 'Piratenpartei'
-	),
-	'ag' => array(
-		'url' => sprintf('%s/images/header-aargau.png', get_stylesheet_directory_uri()),
-		'thumbnail_url' => sprintf('%s/images/header-aargau-thumbnail.png', get_stylesheet_directory_uri()),
-		'description' => 'Sektion Aargau'
-	),
-	'zh' => array(
-		'url' => sprintf('%s/images/header-zuerich.png', get_stylesheet_directory_uri()),
-		'thumbnail_url' => sprintf('%s/images/header-zuerich-thumbnail.png', get_stylesheet_directory_uri()),
-		'description' => 'Sektion Z&uuml;rich'
-	)
-));
+	$homelink = '<li class="home"><a href="' . $url . '"><img src="' .
+		$img . '" alt="' . __('Home') .'" /></a></li>';
+	$items = $homelink . $items;
+	return $items;
+}
+add_filter( 'wp_list_pages', 'new_nav_menu_items' );
+add_filter( 'wp_nav_menu_items', 'new_nav_menu_items' );
+
+//
+// Other stuff
+//
+
+// Function to fill in the <title> tag. TODO: move somewhere else
+
+function showPageTitle() {
+	//
+	// Print the content for the <title> tag based on what is being viewed.
+	//
+	global $page, $paged;
+
+	wp_title('|', true, 'right');
+
+	// Add the blog name.
+	bloginfo('name');
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo('description', 'display');
+	if ($site_description && (is_home() || is_front_page()))
+		echo " | $site_description";
+
+	// Add a page number if necessary:
+	if ($paged >= 2 || $page >= 2)
+		echo ' | ' . sprintf(__('Page %s', 'twentyten'), max($paged, $page));
+}
+
+//
+// Widgets
+//
+
+function pps_widgets_init() {
+	// Area 1, located at the top of the sidebar.
+	register_sidebar(array(
+		'name' => __('Primary Widget Area', 'twentyten'),
+		'id' => 'primary-widget-area',
+		'description' => __('The primary widget area', 'twentyten'),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+}
+
+//
+// Header images
+//
+
+$myuri = get_stylesheet_directory_uri();
+
+// The default header image
+define('HEADER_IMAGE', sprintf('%s/images/header-de.png', $myuri));
+define('HEADER_IMAGE_WIDTH', 365);
+define('HEADER_IMAGE_HEIGHT', 116);
+
+$headersImages = array();
+
+foreach (array(
+
+	'fr' => 'Parti Pirate',
+	'de' => 'Piratenpartei',
+	'ag' => 'Sektion Aargau',
+	'zh' => 'Sektion Z&uuml;rich',
+
+) as $name => $title) {
+	$headersImages[$name] = array(
+		'url' => sprintf('%s/images/header-%s.png', 
+			get_stylesheet_directory_uri(), $name),
+		'thumbnail_url' => sprintf('%s/images/header-%s-thumbnail.png',
+			get_stylesheet_directory_uri(), $name),
+		'description' => $title
+	);
+}
+
+register_default_headers($headersImages);
+
+//
+// Other stuff
+//
+
+// Register sidebars by running pps_widgets_init() on the widgets_init hook
+add_action('widgets_init', 'pps_widgets_init');
+
+// Include some stuff from the twentyten theme
+require_once('twentyten.php');
+
+add_custom_image_header('','twentyten_admin_header_style');
 
 ?>
