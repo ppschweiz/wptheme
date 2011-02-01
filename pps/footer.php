@@ -39,6 +39,7 @@
 					Design: <a href="http://www.piratenpartei.ch/">Piratenpartei Schweiz</a><br />
 		<?php	} ?>
 					<a href="http://creativecommons.org/licenses/by/2.5/ch/deed.de">CC-BY 2.5 Schweiz</a>
+<?php echo __('foo'); ?>
 				</div>
 			</div>
 		</div>
