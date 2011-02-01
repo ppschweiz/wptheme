@@ -52,8 +52,10 @@ function new_nav_menu_items($items) {
 		get_stylesheet_directory_uri());
 	$url = home_url( '/' );
 
-	$homelink = '<li class="home"><a href="' . $url . '"><img src="' .
-		$img . '" alt="' . __('Home') .'" /></a></li>';
+	$expimg = sprintf('%s/images/navup.png',
+		get_stylesheet_directory_uri());
+	$expand = '<br /><a id="expand" href="#" onclick="hideMenu();return false"><img id="nav-expand" src="' . $expimg . '" /></a>';
+	$homelink = '<li class="home"><a href="' . $url . '"><img src="' . $img . '" alt="' . __('Home') .'" /></a> ' . $expand . '</li>';
 	$items = $homelink . $items;
 	return $items;
 }
@@ -129,8 +131,7 @@ function addHeaderImages($images) {
 			'description' => $title
 		);
 	}
-
-	register_default_headers($headersImages);
+	register_default_headers($headerImages);
 }
 
 addHeaderImages(array(

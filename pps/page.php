@@ -36,5 +36,4 @@ get_sidebar(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #container -->
-	</div>
 <?php get_footer(); ?>

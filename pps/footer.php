@@ -27,22 +27,21 @@
 		}
 	}
 ?>
-	</div><!-- #main -->
-	<div id="endcontent">&nbsp;</div>
-</div><!-- #wrapper -->
+			</div><!-- #main -->
+			<div id="endcontent">&nbsp;</div>
 
-	<div id="pageend">
-		<div class="content">
-			<div style="float: right">Powered by <a href="http://wordpress.org/">WordPress</a></div>
-<?php	if ($lang == 'fr') { ?>
-			Design: <a href="http://www.partipirate.ch/">Parti Pirate Suisse</a><br />
-<?php	} else { ?>
-			Design: <a href="http://www.piratenpartei.ch/">Piratenpartei Schweiz</a><br />
-<?php	} ?>
-			<a href="http://creativecommons.org/licenses/by/2.5/ch/deed.de">CC-BY 2.5 Schweiz</a>
+			<div id="pageend">
+				<div class="content">
+					<div style="float: right">Powered by <a href="http://wordpress.org/">WordPress</a></div>
+		<?php	if ($lang == 'fr') { ?>
+					Design: <a href="http://www.partipirate.ch/">Parti Pirate Suisse</a><br />
+		<?php	} else { ?>
+					Design: <a href="http://www.piratenpartei.ch/">Piratenpartei Schweiz</a><br />
+		<?php	} ?>
+					<a href="http://creativecommons.org/licenses/by/2.5/ch/deed.de">CC-BY 2.5 Schweiz</a>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
 <?php
 	/* Always have wp_footer() just before the closing </body>
 	 * tag of your theme, or you will break many plugins, which
@@ -51,5 +50,5 @@
 
 	wp_footer();
 ?>
-</body>
+	</body>
 </html>
