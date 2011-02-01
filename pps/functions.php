@@ -1,5 +1,4 @@
 <?php
-
 //
 // i18n
 //
@@ -58,15 +57,14 @@ function new_nav_menu_items($items) {
 	$items = $homelink . $items;
 	return $items;
 }
-add_filter( 'wp_list_pages', 'new_nav_menu_items' );
-add_filter( 'wp_nav_menu_items', 'new_nav_menu_items' );
+add_filter('wp_list_pages', 'new_nav_menu_items');
+add_filter('wp_nav_menu_items', 'new_nav_menu_items');
 
 //
 // Other stuff
 //
 
 // Function to fill in the <title> tag. TODO: move somewhere else
-
 function showPageTitle() {
 	//
 	// Print the content for the <title> tag based on what is being viewed.
@@ -105,48 +103,49 @@ function pps_widgets_init() {
 	) );
 }
 
+// Register sidebars by running pps_widgets_init() on the widgets_init hook
+add_action('widgets_init', 'pps_widgets_init');
+
 //
 // Header images
 //
 
-$myuri = get_stylesheet_directory_uri();
-
 // The default header image
-define('HEADER_IMAGE', sprintf('%s/images/header-de.png', $myuri));
+define('HEADER_IMAGE', sprintf('%s/images/header-de.png',
+					get_stylesheet_directory_uri()));
 define('HEADER_IMAGE_WIDTH', 365);
 define('HEADER_IMAGE_HEIGHT', 116);
 
-$headersImages = array();
+function addHeaderImages($images) {
+	$headerImages = array();
 
-foreach (array(
+	foreach ($images as $name => $title) {
+		$headerImages[$name] = array(
+			'url' => sprintf('%s/images/header-%s.png', 
+				get_stylesheet_directory_uri(), $name),
+			'thumbnail_url' => 
+				sprintf('%s/images/header-%s-thumbnail.png',
+				get_stylesheet_directory_uri(), $name),
+			'description' => $title
+		);
+	}
 
+	register_default_headers($headersImages);
+}
+
+addHeaderImages(array(
 	'fr' => 'Parti Pirate',
 	'de' => 'Piratenpartei',
 	'ag' => 'Sektion Aargau',
 	'zh' => 'Sektion Z&uuml;rich',
-
-) as $name => $title) {
-	$headersImages[$name] = array(
-		'url' => sprintf('%s/images/header-%s.png', 
-			get_stylesheet_directory_uri(), $name),
-		'thumbnail_url' => sprintf('%s/images/header-%s-thumbnail.png',
-			get_stylesheet_directory_uri(), $name),
-		'description' => $title
-	);
-}
-
-register_default_headers($headersImages);
+));
 
 //
 // Other stuff
 //
 
-// Register sidebars by running pps_widgets_init() on the widgets_init hook
-add_action('widgets_init', 'pps_widgets_init');
-
 // Include some stuff from the twentyten theme
 require_once('twentyten.php');
 
 add_custom_image_header('','twentyten_admin_header_style');
-
 ?>
