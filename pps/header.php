@@ -17,7 +17,6 @@
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascript/prototype/prototype.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascript/scriptaculous/scriptaculous.js?load=effects"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascript/pps.js"></script>
 <?php
 		/* We add some JavaScript to pages with the comment form
@@ -48,6 +47,5 @@ wp_nav_menu(array(
 ));
 ?>
 				</div>
-				<div id="foo" style="display: none">FOO</div>
 			</div>
 			<div id="main">

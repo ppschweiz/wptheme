@@ -38,6 +38,10 @@ textarea {
 	padding: 2px;
 }
 
+img {
+	border: none;
+}
+
 #content h2 {
 	font-size: x-large;
 	font-weight: normal;
@@ -94,35 +98,34 @@ img.logo {
 
 div#navigation {
 	position: relative;
-	padding: 0 4px;
+	padding: 0 0 0 4px;
 	margin: 0;
 	background-image: url('images/navline-vert.png');
+	background-repeat: repeat-y;
+	float: left;
 	z-index: 10;
+	width: 978px;
 }
 
 div.menu {
 	background-image: url('images/hnavbg.png');
-	height: 95px;
-}
-
-div.menu.closed {
-	height: 55px;
+	clear: both;
+	float: left;
 }
 
 div.menu > ul {
 	background-image: url('images/navline-vert-dividers.png');
+	background-position: -10px 0;
+	float: left;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	height: 100%;
-
 	padding-left: 5px;
 }
 
 div.menu ul li.home {
-	width: 45px;
-	padding-top: 13px;
-	padding-right: 5px;
+	width: 35px;
+	padding: 13px 0 2px 0;
 	text-align: center;
 }
 
@@ -133,10 +136,11 @@ div.menu ul li.home img#nav-expand{
 }
 
 div.menu ul li {
-	width: 184px;
+	width: 180px;
 	float: left;
 	margin: 0;
-	padding: 0;
+	padding: 0 0 2px 4px;
+	border: none;
 }
 
 div.menu > ul > li > a {
@@ -144,6 +148,7 @@ div.menu > ul > li > a {
 	text-decoration: none;
 	text-transform: uppercase;
 	position: relative;
+	letter-spacing: 2px;
 }
 
 div.menu ul li a:hover {
@@ -175,6 +180,7 @@ div.menu ul.sub-menu li {
 	background-repeat: no-repeat;
 	padding-left: 7px;
 	background-position: 0 4px;
+	margin-bottom: 3px;
 }
 
 div.menu ul.children li:hover,
@@ -186,6 +192,7 @@ div.menu ul.sub-menu li:hover {
 
 #sidebar {
 	float: right;
+	/*display: inline;*/
 	width: 230px;
 }
 
@@ -230,6 +237,13 @@ div.menu ul.sub-menu li:hover {
 
 #searchform input#s {
 	width: 120px;
+}
+
+/* CURRENT */
+
+#main {
+	clear: both;
+	overflow: hidden;
 }
 
 /* footer */

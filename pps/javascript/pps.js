@@ -1,6 +1,10 @@
 function showMenu() {
-	var menu = $$('#navigation > div.menu');
-	menu[0].removeClassName('closed');
+	$$('ul.children').each(function(child) {
+		child.show();
+	});
+	$$('ul.sub-menu').each(function(child) {
+		child.show();
+	});
 
 	var img = $('nav-expand');
 	img.src = img.src.replace('down', 'up');
@@ -12,8 +16,12 @@ function showMenu() {
 }
 
 function hideMenu() {
-	var menu = $$('#navigation > div.menu');
-	menu[0].addClassName('closed');
+	$$('ul.children').each(function(child) {
+		child.hide();
+	});
+	$$('ul.sub-menu').each(function(child) {
+		child.hide();
+	});
 
 	var img = $('nav-expand');
 	img.src = img.src.replace('up', 'down');
