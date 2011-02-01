@@ -134,8 +134,10 @@ function addHeaderImages($images) {
 }
 
 addHeaderImages(array(
-	'fr' => 'Parti Pirate',
 	'de' => 'Piratenpartei',
+	'fr' => 'Parti Pirate',
+	'it' => 'Partito Pirata',
+	'en' => 'Pirate Party',
 	'ag' => 'Sektion Aargau',
 	'zh' => 'Sektion Z&uuml;rich',
 ));
