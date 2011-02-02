@@ -6,10 +6,10 @@ msgstr ""
 "PO-Revision-Date: 2010-07-30 20:51+0100\n"
 "Last-Translator: SteveAgl <steagl@wordpress-it.it>\n"
 "Language-Team: Italian (www.wordpress-it.it) <info@wordpress-it.it>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
@@ -87,14 +87,15 @@ msgstr "Meta"
 msgid ""
 "Design: <a href=\"http://www.pirateparty.ch/\">Pirate Party Switzerland</a>"
 msgstr ""
+"Design: <a href=\"http://www.partitopirata.ch/\">Partito Pirata Svizzera</a>"
 
 #: footer.php:37
 msgid "http://creativecommons.org/licenses/by/2.5/ch/deed.en"
-msgstr ""
+msgstr "http://creativecommons.org/licenses/by/2.5/ch/deed.it"
 
 #: footer.php:37
 msgid "CC-BY 2.5 Switzerland"
-msgstr ""
+msgstr "CC-BY 2.5 Svizzera"
 
 #: content.php:25 content.php:173
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
