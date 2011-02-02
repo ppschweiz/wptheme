@@ -4,13 +4,8 @@
 //
 
 // Make theme available for translation
-load_theme_textdomain( 'twentyten', TEMPLATEPATH . '/languages' );
-
-// Load the language files
-$locale = get_locale();
-$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-if (is_readable($locale_file))
-	require_once($locale_file);
+load_theme_textdomain('pps', TEMPLATEPATH . '/po');
+//load_theme_textdomain('twentyten', TEMPLATEPATH . '/po/twentyten');
 
 //
 // Stuff that concerns the navigation menu
@@ -85,7 +80,7 @@ function showPageTitle() {
 
 	// Add a page number if necessary:
 	if ($paged >= 2 || $page >= 2)
-		echo ' | ' . sprintf(__('Page %s', 'twentyten'), max($paged, $page));
+		echo ' | ' . sprintf(__('Page %s', 'pps'), max($paged, $page));
 }
 
 //
@@ -95,9 +90,9 @@ function showPageTitle() {
 function pps_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar(array(
-		'name' => __('Primary Widget Area', 'twentyten'),
+		'name' => __('Primary Widget Area', 'pps'),
 		'id' => 'primary-widget-area',
-		'description' => __('The primary widget area', 'twentyten'),
+		'description' => __('The primary widget area', 'pps'),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',

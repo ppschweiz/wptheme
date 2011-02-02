@@ -33,13 +33,8 @@
 			<div id="pageend">
 				<div class="content">
 					<div style="float: right">Powered by <a href="http://wordpress.org/">WordPress</a></div>
-		<?php	if ($lang == 'fr') { ?>
-					Design: <a href="http://www.partipirate.ch/">Parti Pirate Suisse</a><br />
-		<?php	} else { ?>
-					Design: <a href="http://www.piratenpartei.ch/">Piratenpartei Schweiz</a><br />
-		<?php	} ?>
-					<a href="http://creativecommons.org/licenses/by/2.5/ch/deed.de">CC-BY 2.5 Schweiz</a>
-<?php echo __('foo'); ?>
+					<?php echo __('Design: <a href="http://www.pirateparty.ch/">Pirate Party Switzerland</a>', 'pps'); ?><br />
+					<a href="<?php echo __('http://creativecommons.org/licenses/by/2.5/ch/deed.en', 'pps') ?>"><?php echo __('CC-BY 2.5 Switzerland', 'pps'); ?></a>
 				</div>
 			</div>
 		</div>
