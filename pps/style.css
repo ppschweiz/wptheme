@@ -6,12 +6,12 @@ Author: Stefan Ott
 Author URI: http://www.ott.net/
 Version: 0.4.0-dev
 */
-/*
-* {
+
+li,ul {
 	padding: 0;
 	margin: 0;
 	border: 0;
-}*/
+}
 
 body {
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
