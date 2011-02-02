@@ -702,7 +702,7 @@ body.page .edit-link {
 	margin-bottom: 0;
 }
 .entry-utility {
-	clear: both;
+	/*clear: both;*/
 	color: #888;
 	font-size: 12px;
 	line-height: 18px;
