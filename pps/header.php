@@ -16,6 +16,7 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" type="image/x-icon" />
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascript/prototype/prototype.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascript/pps.js"></script>
 <?php
@@ -37,7 +38,7 @@
 		<div id="page">
 			<div id="ship"><img src="/wp-content/themes/pps/images/bgship.png" alt="" /></div>
 			<div id="header">
-				<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" class="logo" />
+				<a href="<?php bloginfo('url'); ?>"><img src="<?php echo preg_replace('/https:/', 'http:', get_header_image()); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="<?php bloginfo('name'); ?>" class="logo" /></a>
 				<div id="premenu">&nbsp;</div>
 				<div id="navigation">
 					<?php
