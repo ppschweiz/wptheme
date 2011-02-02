@@ -135,6 +135,8 @@ addHeaderImages(array(
 	'it' => 'Partito Pirata',
 	'en' => 'Pirate Party',
 	'ag' => 'Sektion Aargau',
+	'fri' => 'Section Fribourgeoise',
+	'ge' => 'Section Genevoise',
 	'vd' => 'Section Vaudoise',
 	'zh' => 'Sektion Z&uuml;rich',
 ));
