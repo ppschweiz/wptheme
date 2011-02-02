@@ -1,0 +1,215 @@
+# Copyright (C) 2010 PPS
+# This file is distributed under the same license as the PPS package.
+msgid ""
+msgstr ""
+"Project-Id-Version: PPS 0.4.0-dev\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/pps04\n"
+"POT-Creation-Date: 2011-02-02 00:22:31+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: comments.php:18
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:35
+msgid "One Response to %2$s"
+msgid_plural "%1$s Responses to %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:41 comments.php:60
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr ""
+
+#: comments.php:42 comments.php:61
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:15
+msgid "Primary Navigation"
+msgstr ""
+
+#: functions.php:53
+msgid "Home"
+msgstr ""
+
+#: functions.php:83
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:93
+msgid "Primary Widget Area"
+msgstr ""
+
+#: functions.php:95
+msgid "The primary widget area"
+msgstr ""
+
+#: po/trunk/pomo/sample/app.php:56
+msgid "Welcome %s!"
+msgstr ""
+
+#: po/trunk/pomo/sample/app.php:60
+msgid "A string with low priority!"
+msgstr ""
+
+#: po/trunk/pomo/sample/app.php:62
+msgid "Bye\n"
+msgstr ""
+
+#: sidebar.php:20
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:27
+msgid "Meta"
+msgstr ""
+
+#: footer.php:36
+msgid ""
+"Design: <a href=\"http://www.pirateparty.ch/\">Pirate Party Switzerland</a>"
+msgstr ""
+
+#: footer.php:37
+msgid "http://creativecommons.org/licenses/by/2.5/ch/deed.en"
+msgstr ""
+
+#: footer.php:37
+msgid "CC-BY 2.5 Switzerland"
+msgstr ""
+
+#: content.php:25 content.php:173
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: content.php:26 content.php:174
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:33
+msgid "Not Found"
+msgstr ""
+
+#: content.php:35
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+
+#: content.php:60 content.php:92
+msgctxt "gallery category slug"
+msgid "gallery"
+msgstr ""
+
+#: content.php:62 content.php:83 content.php:126
+msgid "Permalink to %s"
+msgstr ""
+
+#: content.php:82
+msgid "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr ""
+
+#: content.php:92
+msgid "View posts in the Gallery category"
+msgstr ""
+
+#: content.php:92
+msgid "More Galleries"
+msgstr ""
+
+#: content.php:94 content.php:117 content.php:159
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:94 content.php:117 content.php:159
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:94 content.php:117 content.php:159
+msgid "% Comments"
+msgstr ""
+
+#: content.php:95 content.php:118 content.php:160 page.php:29
+msgid "Edit"
+msgstr ""
+
+#: content.php:101
+msgctxt "asides category slug"
+msgid "asides"
+msgstr ""
+
+#: content.php:110 content.php:138
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:139 page.php:28
+msgid "Pages:"
+msgstr ""
+
+#: content.php:146
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr ""
+
+#: content.php:155
+msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+msgstr ""
+
+#: twentyten.php:22
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: twentyten.php:25
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: twentyten.php:32
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: twentyten.php:32 twentyten.php:49
+msgid "(Edit)"
+msgstr ""
+
+#: twentyten.php:49
+msgid "Pingback:"
+msgstr ""
+
+#: twentyten.php:87
+msgid ""
+"<span class=\"%1$s\">Posted on</span> %2$s <span class=\"meta-sep\">by</"
+"span> %3$s"
+msgstr ""
+
+#: twentyten.php:96
+msgid "View all posts by %s"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "PPS"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://dev.piratenpartei.ch/projects/wptheme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Pirate Party Switzerland"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Stefan Ott"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.ott.net/"
+msgstr ""
