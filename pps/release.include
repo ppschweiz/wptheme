@@ -1,0 +1,8 @@
+screenshot.png
+style.css
+README.txt
+*.php
+*.js
+*.mo
+images/*png
+images/*jpg
