@@ -470,6 +470,10 @@ h3#reply-title {
 #content {
 	margin-bottom: 36px;
 }
+#content li {
+	margin-left: 25px;
+	padding-left: 10px;
+}
 #content,
 #content input,
 #content textarea {
