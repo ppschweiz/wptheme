@@ -135,11 +135,11 @@ div.menu ul li.home img#nav-expand{
 	top: -1px;
 }
 
-div.menu ul li {
+div.menu > ul > li {
 	width: 180px;
 	float: left;
 	margin: 0;
-	padding: 0 0 2px 4px;
+	padding: 17px 0 2px 4px;
 	border: none;
 }
 
@@ -155,17 +155,20 @@ div.menu ul li a:hover {
 	color: #333333;
 }
 
-div.menu ul li.page_item img {
-	vertical-align: middle;
-	position: relative;
-	left: -4px;
-	height: 55px;
+div.menu > ul > li > a {
+	margin-left: 59px;
+}
+
+div.menu > ul > li > a > img {
+	position: absolute;
+	top: -17px;
+	left: -65px;
 }
 
 div.menu ul.children,
 div.menu ul.sub-menu {
 	list-style: none;
-	padding: 0 0 0 59px;
+	padding: 22px 0 2px 59px;
 }
 
 div.menu ul.children a,

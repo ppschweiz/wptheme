@@ -50,7 +50,7 @@ function new_nav_menu_items($items) {
 	$expimg = sprintf('%s/images/navup.png',
 		get_stylesheet_directory_uri());
 	$expand = '<br /><a id="expand" href="#" onclick="hideMenu();return false"><img id="nav-expand" src="' . $expimg . '" /></a>';
-	$homelink = '<li class="home"><a href="' . $url . '"><img src="' . $img . '" alt="' . __('Home') .'" /></a> ' . $expand . '</li>';
+	$homelink = '<li class="home"><span><a href="' . $url . '"><img src="' . $img . '" alt="' . __('Home') .'" /></a> ' . $expand . '</span></li>';
 	$items = $homelink . $items;
 	return $items;
 }
