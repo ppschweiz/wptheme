@@ -52,10 +52,13 @@ img {
 	background-color: #EEB50C;
 	background-image: url('images/bgmid.jpg');
 	background-repeat: repeat-x;
+	background-attachment: fixed;
+	background-position: center top;
 }
 
 #main,
 #header {
+	position: relative;
 	margin: 0 auto;
 	width: 968px;
 }
@@ -76,7 +79,7 @@ img {
 
 #ship {
 	position: absolute;
-	left: 685px;
+	left: 565px;
 	top: 11px;
 	height: 98px;
 	width: 85px;
@@ -197,6 +200,8 @@ div.menu ul.sub-menu li:hover {
 	float: right;
 	/*display: inline;*/
 	width: 230px;
+	padding-bottom: 30px;
+	padding-right: 10px;
 }
 
 #sidebar a {

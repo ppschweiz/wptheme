@@ -36,8 +36,8 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="page">
-			<div id="ship"><img src="/wp-content/themes/pps/images/bgship.png" alt="" /></div>
 			<div id="header">
+				<div id="ship"><img src="/wp-content/themes/pps/images/bgship.png" alt="" /></div>
 				<a href="<?php bloginfo('url'); ?>"><img src="<?php echo preg_replace('/https:/', 'http:', get_header_image()); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="<?php bloginfo('name'); ?>" class="logo" /></a>
 				<div id="premenu">&nbsp;</div>
 				<div id="navigation">
