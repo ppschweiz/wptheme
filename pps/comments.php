@@ -7,9 +7,10 @@
  * handled by a callback to twentyten_comment which is
  * located in the functions.php file.
  *
+ * This file was originally taken from the twentyten theme
+ *
  * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @subpackage PPS
  */
 ?>
 

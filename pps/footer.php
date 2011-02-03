@@ -5,14 +5,15 @@
  * Contains the closing of the id=main div and all content
  * after.  Calls sidebar-footer.php for bottom widgets.
  *
+ * This file was originally taken from the twentyten theme
+ *
  * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @subpackage PPS
  */
 
 	$options = get_option('pps_theme_options');
 
-	if (is_array($options) && array_key_exists('lang', $options) && 
+	if (is_array($options) && array_key_exists('lang', $options) &&
 		$options['lang'] != '')
 	{
 		$lang = $options['lang'];
