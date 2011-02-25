@@ -44,7 +44,12 @@ img {
 
 img.alignright {
 	float: right;
-	margin-left: 1em;
+	margin: 0 0 10px 10px;
+}
+
+img.alignleft {
+	float: left;
+	margin: 0 10px 10px 0;
 }
 
 #content h2 {
@@ -532,21 +537,23 @@ h3#reply-title {
 	margin: 0 0 20px 0;
 }
 #content table {
-	border: 1px solid #e7e7e7;
-	margin: 0 -1px 24px 0;
+	/* border: 1px solid #e7e7e7; */
+	background-color: #fefefe;
+	border: 1px #f0f0f0 solid;
+	margin: 0 0 24px 0;
 	text-align: left;
 	width: 100%;
 }
 #content tr th,
 #content thead th {
-	color: #888;
+	color: #333;
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 18px;
 	padding: 9px 24px;
 }
 #content tr td {
-	border-top: 1px solid #e7e7e7;
+	/* border-top: 1px solid #e7e7e7; */
 	padding: 6px 24px;
 }
 #content tr.odd td {
