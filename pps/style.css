@@ -75,14 +75,14 @@ textarea {
 }
 
 #content {
-	padding: 0 20px;
-	width: 666px;
+	padding: 0 25px;
+	width: 656px;
 }
 
 #ship {
 	position: absolute;
 	left: 565px;
-	top: 11px;
+	top: 6px;
 	height: 98px;
 	width: 85px;
 	z-index: 10;
@@ -294,7 +294,7 @@ p.wp-caption-text {
 
 img {
 	border: none;
-	max-width: 666px;
+	max-width: 656px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	height: auto;
