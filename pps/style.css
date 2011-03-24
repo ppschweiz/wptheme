@@ -496,8 +496,9 @@ h3#reply-title {
 #content input,
 #content textarea {
 	color: #333;
-	font-size: 16px;
-	line-height: 24px;
+	/*font-size: 16px;*/
+	font-size: small;
+	/*line-height: 24px;*/
 }
 #content p,
 #content ul,
