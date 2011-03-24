@@ -8,9 +8,9 @@
  * different template.
  */
 
-get_header();
-get_sidebar(); ?>
-
+	get_header();
+	get_sidebar();
+?>
 		<div id="container">
 			<div id="content" role="main">
 
@@ -36,4 +36,6 @@ get_sidebar(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #container -->
-<?php get_footer(); ?>
+<?php 
+	get_footer();
+?>

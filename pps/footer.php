@@ -10,23 +10,6 @@
  * @package WordPress
  * @subpackage PPS
  */
-
-	$options = get_option('pps_theme_options');
-
-	if (is_array($options) && array_key_exists('lang', $options) &&
-		$options['lang'] != '')
-	{
-		$lang = $options['lang'];
-	} else {
-		$locale = get_locale();
-		$llang = substr($locale, 0, 2);
-
-		if (in_array($llang, array('de', 'fr'))) {
-			$lang = $llang;
-		} else {
-			$lang = 'de';
-		}
-	}
 ?>
 			</div><!-- #main -->
 			<div id="endcontent">&nbsp;</div>
