@@ -289,19 +289,22 @@ div.menu ul.sub-menu li:hover {
 
 p.wp-caption-text {
 	font-style: italic;
-	margin: 5px 0 10px 0;
+	margin: -5px 0 10px 0;
 }
 
 img {
 	border: none;
 	max-width: 666px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	height: auto;
 }
 
 #content .alignright,
 #content img.alignright {
 	float: right;
-	margin: 0 0 10px 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
 }
 
 #content .aligncenter,
@@ -315,7 +318,8 @@ img {
 #content .alignleft,
 #content img.alignleft {
 	float: left;
-	margin: 0 10px 10px 0;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 /* The rest was stolen from the twentyten theme */
