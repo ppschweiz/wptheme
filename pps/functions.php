@@ -11,7 +11,7 @@ load_theme_textdomain('pps', TEMPLATEPATH . '/po');
 // Stuff that concerns the navigation menu
 //
 
-register_nav_menus( array(
+register_nav_menus(array(
 	'primary' => __('Primary Navigation', 'PPS'),
 ));
 
@@ -140,6 +140,124 @@ addHeaderImages(array(
 	'vd' => 'Section Vaudoise',
 	'zh' => 'Sektion Z&uuml;rich',
 ));
+
+//
+// User profile
+//
+
+// make wordpress track the 'full' query argument
+function pps_add_query_vars($vars)
+{
+	$vars[] = 'full';
+	return $vars;
+}
+
+// add and configure rewrite rule for '/profile'
+function pps_flush_rules()
+{
+	$rules = get_option('rewrite_rules');
+
+	if (!isset($rules['(profile)/(.*)$']))
+	{
+		echo 'FLUSH';
+		// force wordpress to refresh its rewrite rules
+		global $wp_rewrite;
+		$wp_rewrite->flush_rules();
+	}
+}
+
+// add our rewrite rule
+function pps_insert_rewrite_rules($rules)
+{
+	$newrules = array(
+		'(profile)/(.*)$' => 'index.php?author_name=$matches[2]&full=1'
+	);
+	return $newrules + $rules;
+}
+
+add_filter('rewrite_rules_array', 'pps_insert_rewrite_rules');
+add_filter('query_vars', 'pps_add_query_vars');
+add_filter('wp_loaded', 'pps_flush_rules');
+
+// extra fields to be added to the user profile
+function extraProfileFields()
+{
+	return array(
+		'publicmail' => array(
+			'name' => __('Public mail address', 'pps'),
+			'desc' => __('Your publicly visible e-mail address', 'pps')
+		),
+		'picture_url' => array(
+			'name' => __('Profile picture', 'pps'),
+			'desc' => __('URL to your profile picture (eg. http://foo.com/me.jpg)', 'pps')
+		),
+		'ppstitle' => array(
+			'name' => __('PPS function', 'pps'),
+			'desc' => __("Your function in the PPS (eg. 'President of the Pirate Party' or 'PPS webmaster')", 'pps')
+		),
+		'yearofbirth' => array(
+			'name' => __('Year of Birth', 'pps'),
+			'desc' => __('The year you were born (eg. 1964)', 'pps')
+		),
+		'job' => array(
+			'name' => __('Job', 'pps'),
+			'desc' => __('Your current job (eg. President)', 'pps')
+		),
+		'education' => array(
+			'name' => __('Education', 'pps'),
+			'desc' => __('Your education (eg. PhD in Physics)', 'pps')
+		),
+		'twitter' => array(
+			'name' => __('Twitter profile', 'pps'),
+			'desc' => __('Your Twitter username (eg. ppsde)', 'pps')
+		),
+		'politnetz' => array(
+			'name' => __('Politnetz profile', 'pps'),
+			'desc' => __('Your politnetz.ch profile URL (eg. http://hans.muster.politnetz.ch/ or http://www.politnetz.ch/benutzer/123456/profiles)', 'pps')
+		),
+	);
+}
+
+add_action( 'show_user_profile', 'pps_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'pps_show_extra_profile_fields' );
+
+add_action( 'personal_options_update', 'pps_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'pps_save_extra_profile_fields' );
+
+function pps_show_extra_profile_fields($user)
+{
+	printf("<h3>%s</h3>\n", __('Extra profile information', 'pps'));
+	echo '<table class="form-table">';
+
+	foreach (extraProfileFields() as $key => $values)
+	{
+?>
+<tr>
+	<th><label for="<?php echo $key ?>"><?php echo $values['name'] ?></label></th>
+		<td>
+			<input type="text" name="<?php echo $key ?>" id="<?php echo $key ?>" value="<?php echo esc_attr(get_user_meta($user->ID, $key, true)); ?>" class="regular-text" /><br />
+			<span class="description"><?php echo $values['desc'] ?></span>
+		</td>
+	</tr>
+<?php
+	}
+	echo '</table>';
+}
+
+function pps_save_extra_profile_fields($user_id)
+{
+	if (!current_user_can( 'edit_user', $user_id ))
+		return false;
+
+//	echo "user=" . $user_id . "<br/>";
+
+	foreach (extraProfileFields() as $key => $values)
+	{
+//		echo $key . "=" . $_POST[$key];
+//		echo '<br />';
+		update_user_meta($user_id, $key, $_POST[$key]);
+	}
+}
 
 //
 // Other stuff

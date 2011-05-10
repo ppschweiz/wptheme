@@ -97,6 +97,13 @@ abbr, acronym {
 	border-bottom: 1px #a57f57 dashed;
 }
 
+div.quickProfile {
+	border: 1px #dddddd solid;
+	margin: -5px;
+	padding: 5px;
+	background-color: #f8f8f8
+}
+
 /* the navigation menu */
 
 #premenu {

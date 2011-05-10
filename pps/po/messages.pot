@@ -213,3 +213,60 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://www.ott.net/"
 msgstr ""
+
+msgid "Extra profile information"
+msgstr ""
+
+msgid "Web links"
+msgstr ""
+
+msgid "Public mail address"
+msgstr ""
+
+msgid "Your publicly visible e-mail address"
+msgstr ""
+
+msgid "Profile picture"
+msgstr ""
+
+msgid "URL to your profile picture (eg. http://foo.com/me.jpg)"
+msgstr ""
+
+msgid "PPS function"
+msgstr ""
+
+msgid "Your function in the PPS (eg. 'President of the Pirate Party' or 'PPS webmaster')"
+msgstr ""
+
+msgid "Year of Birth"
+msgstr ""
+
+msgid "The year you were born (eg. 1964)"
+msgstr ""
+
+msgid "Job"
+msgstr ""
+
+msgid "Your current job (eg. President)"
+msgstr ""
+
+msgid "Education"
+msgstr ""
+
+msgid "Your education (eg. PhD in Physics)"
+msgstr ""
+
+msgid "Twitter profile"
+msgstr ""
+
+msgid "Your Twitter username (eg. ppsde)"
+msgstr ""
+
+msgid "Politnetz profile"
+msgstr ""
+
+msgid "Your politnetz.ch profile URL (eg. http://hans.muster.politnetz.ch/ or http://www.politnetz.ch/benutzer/123456/profiles)"
+msgstr ""
+
+msgid "View profile"
+msgstr ""
