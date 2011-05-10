@@ -11,7 +11,8 @@ load_theme_textdomain('pps', TEMPLATEPATH . '/po');
 // Stuff that concerns the navigation menu
 //
 
-register_nav_menus(array(
+register_nav_menus(array
+(
 	'primary' => __('Primary Navigation', 'PPS'),
 ));
 
@@ -19,17 +20,21 @@ register_nav_menus(array(
 add_theme_support('post-thumbnails');
 
 // Add post thumbnails as icons in the menu
-function addMenuIcons($menu_text) {
-	$pages = get_pages(array(
+function addMenuIcons($menu_text)
+{
+	$pages = get_pages(array
+	(
 		'depth' => 0,
 	));
 
-	foreach ($pages as $page) {
+	foreach ($pages as $page)
+	{
 		$id = $page->ID;
 		$title = $page->post_title;
 
 		$icon = get_the_post_thumbnail($id);
-		if ($icon != '') {
+		if ($icon != '')
+		{
 			$menu_text = preg_replace(
 				"/>$title</",
 				">$icon$title<",
@@ -42,7 +47,8 @@ add_filter('wp_nav_menu', 'addMenuIcons');
 add_filter('wp_page_menu', 'addMenuIcons');
 
 // Add the home link to the menu
-function new_nav_menu_items($items) {
+function new_nav_menu_items($items)
+{
 	$img = sprintf('%s/images/hnavico_home.png',
 		get_stylesheet_directory_uri());
 	$url = home_url( '/' );
@@ -62,7 +68,8 @@ add_filter('wp_nav_menu_items', 'new_nav_menu_items');
 //
 
 // Function to fill in the <title> tag. TODO: move somewhere else
-function showPageTitle() {
+function showPageTitle()
+{
 	//
 	// Print the content for the <title> tag based on what is being viewed.
 	//
@@ -87,9 +94,11 @@ function showPageTitle() {
 // Widgets
 //
 
-function pps_widgets_init() {
+function pps_widgets_init()
+{
 	// Area 1, located at the top of the sidebar.
-	register_sidebar(array(
+	register_sidebar(array
+	(
 		'name' => __('Primary Widget Area', 'pps'),
 		'id' => 'primary-widget-area',
 		'description' => __('The primary widget area', 'pps'),
@@ -97,7 +106,7 @@ function pps_widgets_init() {
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );
+	));
 }
 
 // Register sidebars by running pps_widgets_init() on the widgets_init hook
@@ -113,11 +122,14 @@ define('HEADER_IMAGE', sprintf('%s/images/header-de.png',
 define('HEADER_IMAGE_WIDTH', 365);
 define('HEADER_IMAGE_HEIGHT', 116);
 
-function addHeaderImages($images) {
+function addHeaderImages($images)
+{
 	$headerImages = array();
 
-	foreach ($images as $name => $title) {
-		$headerImages[$name] = array(
+	foreach ($images as $name => $title)
+	{
+		$headerImages[$name] = array
+		(
 			'url' => sprintf('%s/images/header-%s.png', 
 				get_stylesheet_directory_uri(), $name),
 			'thumbnail_url' => 
@@ -129,7 +141,8 @@ function addHeaderImages($images) {
 	register_default_headers($headerImages);
 }
 
-addHeaderImages(array(
+addHeaderImages(array
+(
 	'de' => 'Piratenpartei',
 	'fr' => 'Parti Pirate',
 	'it' => 'Partito Pirata',
@@ -159,7 +172,6 @@ function pps_flush_rules()
 
 	if (!isset($rules['(profile)/(.*)$']))
 	{
-		echo 'FLUSH';
 		// force wordpress to refresh its rewrite rules
 		global $wp_rewrite;
 		$wp_rewrite->flush_rules();
@@ -169,7 +181,8 @@ function pps_flush_rules()
 // add our rewrite rule
 function pps_insert_rewrite_rules($rules)
 {
-	$newrules = array(
+	$newrules = array
+	(
 		'(profile)/(.*)$' => 'index.php?author_name=$matches[2]&full=1'
 	);
 	return $newrules + $rules;
@@ -182,7 +195,8 @@ add_filter('wp_loaded', 'pps_flush_rules');
 // extra fields to be added to the user profile
 function extraProfileFields()
 {
-	return array(
+	return array
+	(
 		'publicmail' => array(
 			'name' => __('Public mail address', 'pps'),
 			'desc' => __('Your publicly visible e-mail address', 'pps')
@@ -218,11 +232,11 @@ function extraProfileFields()
 	);
 }
 
-add_action( 'show_user_profile', 'pps_show_extra_profile_fields' );
-add_action( 'edit_user_profile', 'pps_show_extra_profile_fields' );
+add_action('show_user_profile', 'pps_show_extra_profile_fields');
+add_action('edit_user_profile', 'pps_show_extra_profile_fields');
 
-add_action( 'personal_options_update', 'pps_save_extra_profile_fields' );
-add_action( 'edit_user_profile_update', 'pps_save_extra_profile_fields' );
+add_action('personal_options_update', 'pps_save_extra_profile_fields');
+add_action('edit_user_profile_update', 'pps_save_extra_profile_fields');
 
 function pps_show_extra_profile_fields($user)
 {
@@ -246,15 +260,13 @@ function pps_show_extra_profile_fields($user)
 
 function pps_save_extra_profile_fields($user_id)
 {
-	if (!current_user_can( 'edit_user', $user_id ))
+	if (!current_user_can('edit_user', $user_id))
+	{
 		return false;
-
-//	echo "user=" . $user_id . "<br/>";
+	}
 
 	foreach (extraProfileFields() as $key => $values)
 	{
-//		echo $key . "=" . $_POST[$key];
-//		echo '<br />';
 		update_user_meta($user_id, $key, $_POST[$key]);
 	}
 }
