@@ -79,6 +79,10 @@ textarea {
 	width: 656px;
 }
 
+iframe {
+	border: none;
+}
+
 #ship {
 	position: absolute;
 	left: 565px;
