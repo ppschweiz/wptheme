@@ -107,6 +107,18 @@ function pps_widgets_init()
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
+
+	// Area 2, located inside the dark gray bar at the top of the site.
+	register_sidebar(array
+	(
+		'name' => __('Secondary Widget Area', 'pps'),
+		'id' => 'secondary-widget-area',
+		'description' => __('The widget area for the dark bar at the top of the site', 'pps'),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	));
 }
 
 // Register sidebars by running pps_widgets_init() on the widgets_init hook

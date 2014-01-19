@@ -35,6 +35,17 @@
 ?>
 	</head>
 	<body <?php body_class(); ?>>
+		<div id="bar">
+			<ul id="bar-inner">
+<?php
+				/* When we call the dynamic_sidebar() function, it'll spit out
+				 * the widgets for that widget area. If it instead returns false,
+				 * then the sidebar simply doesn't exist, so we leave it blank.
+				 */
+				dynamic_sidebar('secondary-widget-area');
+?>
+			</ul>
+		</div>
 		<div id="page">
 			<div id="header">
 				<div id="ship"><img src="/wp-content/themes/pps/images/bgship.png" alt="" /></div>
