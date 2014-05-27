@@ -16,9 +16,9 @@
 
 			<div id="pageend">
 				<div class="content">
-					<div style="float: right">Powered by <a href="http://wordpress.org/">WordPress</a></div>
-					<?php echo __('Design: <a href="http://www.pirateparty.ch/">Pirate Party Switzerland</a>', 'pps'); ?><br />
-					<a href="<?php echo __('http://creativecommons.org/licenses/by/2.5/ch/deed.en', 'pps') ?>"><?php echo __('CC-BY 2.5 Switzerland', 'pps'); ?></a>
+					<div style="float: right">Powered by <a href="https://wordpress.org/">WordPress</a></div>
+					<?php echo __('Design: <a href="https://www.pirateparty.ch/">Pirate Party Switzerland</a>', 'pps'); ?><br />
+					<a href="<?php echo __('https://creativecommons.org/licenses/by/2.5/ch/deed.en', 'pps') ?>"><?php echo __('CC-BY 2.5 Switzerland', 'pps'); ?></a>
 				</div>
 			</div>
 		</div>
