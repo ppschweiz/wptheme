@@ -114,34 +114,34 @@ div.quickProfile {
 
 /* the top bar */
 
-div#bar {
+#bar {
 	background-color: #4C4642;
 	border-bottom: 1px solid #47403C;
 	height: 20px;
 	width: 100%;
 }
 
-ul#bar-inner {
+#bar-inner {
 	margin: auto;
 	width: 968px;
 }
 
-ul#bar-inner li {
+#bar-inner li {
 	display: inline;
 	float: left;
 	list-style-type: none;
 	padding-right: 12px;
 }
 
-ul#bar-inner li:last-child {
+#bar-inner li:last-child {
 	float: right;
 }
 
-ul#bar-inner .widget-title, ul#bar-inner li.home {
+#bar-inner .widget-title, ul#bar-inner li.home {
 	display: none;
 }
 
-ul#bar-inner a {
+#bar-inner a {
 	color: #ccc;
 	font-size: 11px;
 	line-height: 20px;
@@ -149,22 +149,17 @@ ul#bar-inner a {
 	text-transform: uppercase;
 }
 
-ul#bar-inner a:hover {
+#bar-inner a:hover {
 	color: #e79928;
 }
 
 /* the navigation menu */
 
-#premenu {
-	background-image: url('images/bodertop.png');
-	height: 4px;
-}
-
-div#navigation {
+#navigation {
 	position: relative;
-	padding: 0 0 0 4px;
+	padding: 0 4px;
 	margin: 0;
-	background-image: url('images/navline-vert.png');
+	box-shadow: 0px -2px 2px #d97c10;
 	background-repeat: repeat-y;
 	float: left;
 	z-index: 10;
@@ -399,14 +394,14 @@ blockquote {
 #comments .navigation {
 	padding: 0 0 18px 0;
 }
-h3#comments-title,
-h3#reply-title {
+#comments-title,
+#reply-title {
 	color: #000;
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 0;
 }
-h3#comments-title {
+#comments-title {
 	padding: 24px 0;
 }
 .commentlist {
@@ -535,7 +530,7 @@ input[type=submit] {
 .children #respond {
 	margin: 0 48px 0 0;
 }
-h3#reply-title {
+#reply-title {
 	margin: 18px 0;
 }
 #comments-list #respond {
