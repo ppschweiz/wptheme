@@ -7,6 +7,10 @@ Author URI: http://www.ott.net/
 Version: 0.4.3
 */
 
+:root {
+	--hnavbg: linear-gradient(to bottom, #eb8801, #e8c346);
+}
+
 li,ul {
 	padding: 0;
 	margin: 0;
@@ -32,9 +36,9 @@ input[type="text"],
 textarea {
 	background: #f9f9f9;
 	border: 1px solid #ccc;
-	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
-	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 	padding: 2px;
 }
 
@@ -168,8 +172,14 @@ div#navigation {
 }
 
 div.menu {
-	background-image: url('images/hnavbg.png');
 	background-color: #e8c346;
+	background-image: url('images/hnavbg.png');
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb8801', endColorstr='#e8c346');
+	background-image: -moz-linear-gradient(top, #eb8801, #e8c346);
+	background-image: -webkit-linear-gradient(top, #eb8801, #e8c346);
+	background-image: -o-linear-gradient(top, #eb8801, #e8c346);
+	background-image: linear-gradient(to bottom, #eb8801, #e8c346);
+	background-image: var(--hnavbg);
 	clear: both;
 	float: left;
 	background-repeat: repeat-x;
