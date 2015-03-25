@@ -4,7 +4,7 @@ Theme URI: https://dev.piratenpartei.ch/projects/wptheme/
 Description: Pirate Party Switzerland
 Author: Stefan Ott
 Author URI: http://www.ott.net/
-Version: 0.4.3
+Version: 0.5.0
 */
 
 :root {
@@ -66,7 +66,7 @@ textarea {
 #header {
 	position: relative;
 	margin: 0 auto;
-	width: 960px;
+	width: 90%;
 }
 
 #main {
@@ -85,7 +85,7 @@ textarea {
 
 #content {
 	padding: 0 25px;
-	width: 650px;
+	/* width: auto; */
 	-moz-hyphens: auto;
 	-webkit-hyphens: auto;
 	-ms-hyphens: auto;
@@ -132,7 +132,7 @@ div.quickProfile {
 
 #bar-inner {
 	margin: auto;
-	width: 968px;
+	width: auto;
 }
 
 #bar-inner li {
@@ -165,15 +165,15 @@ div.quickProfile {
 /* the navigation menu */
 
 #navigation {
-	position: relative;
-	float: left;
 	z-index: 10;
-	width: 978px;
 }
 
 div.menu {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
 	background-color: #e8c346;
-	background-image: url('images/hnavbg.png');
+	/*background-image: url('images/hnavbg.png');*/
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb8801', endColorstr='#e8c346');
 	background-image: -moz-linear-gradient(top, #eb8801, #e8c346);
 	background-image: -webkit-linear-gradient(top, #eb8801, #e8c346);
@@ -184,14 +184,13 @@ div.menu {
 	-moz-box-shadow: 0 -2px 4px 2px #d97c10;
 	box-shadow: 0 -2px 4px 2px #d97c10;
 	clear: both;
-	float: left;
 	background-repeat: repeat-x;
 }
 
 div.menu > ul {
-	background-image: url('images/navline-vert-dividers.png');
-	background-position: -10px 0;
-	float: left;
+        display: table-row;
+	/*background-image: url('images/navline-vert-dividers.png');
+	background-position: -10px 0;*/
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -199,20 +198,24 @@ div.menu > ul {
 }
 
 div.menu ul li.home {
+        display: none;
 	width: 35px;
 	padding: 13px 0 2px 0;
 	text-align: center;
 }
 
 div.menu ul li.home img#nav-expand{
+        display: none;
 	position: relative;
 	left: -2px;
 	top: -1px;
 }
 
+div.menu > ul > li + li {
+  border-left: 1px solid orange;
+}
 div.menu > ul > li {
-	width: 180px;
-	float: left;
+        display: table-cell;
 	margin: 0;
 	padding: 17px 0 2px 4px;
 	border: none;
@@ -267,7 +270,6 @@ div.menu ul.sub-menu li:hover {
 }
 
 #container {
-	float: left;
 	background-color: #ffffff;
 	padding-top: 40px;
 	border-right: 1px solid #F2E9DE;
@@ -283,7 +285,9 @@ div.menu ul.sub-menu li:hover {
 #sidebar {
 	float: right;
 	/*display: inline;*/
-	width: 209px;
+	width: 20%;
+        max-width: 20em;
+        min-width: 10em;
 	padding: 40px 25px 30px 25px;
 	background-color: #fbf8f2;
 	-webkit-box-ordinal-group: 2;
@@ -349,7 +353,7 @@ div.menu ul.sub-menu li:hover {
 }
 
 #pageend .content {
-	width: 920px;
+	width: auto;
 	margin: 0 auto;
 	background-image: url('images/cc-low.png');
 	background-repeat: no-repeat;
@@ -372,7 +376,7 @@ p.wp-caption-text {
 
 img {
 	border: none;
-	max-width: 656px;
+	max-width: 100%;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	height: auto;
