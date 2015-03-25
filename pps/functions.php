@@ -46,23 +46,6 @@ function addMenuIcons($menu_text)
 add_filter('wp_nav_menu', 'addMenuIcons');
 add_filter('wp_page_menu', 'addMenuIcons');
 
-// Add the home link to the menu
-function new_nav_menu_items($items)
-{
-	$img = sprintf('%s/images/hnavico_home.png',
-		get_stylesheet_directory_uri());
-	$url = home_url( '/' );
-
-	$expimg = sprintf('%s/images/navup.png',
-		get_stylesheet_directory_uri());
-	$expand = '<br /><a id="expand" href="#" onclick="hideMenu();return false"><img id="nav-expand" src="' . $expimg . '" alt="Close navigation" /></a>';
-	$homelink = '<li class="home"><span><a href="' . $url . '"><img src="' . $img . '" alt="' . __('Home') .'" /></a> ' . $expand . '</span></li>';
-	$items = $homelink . $items;
-	return $items;
-}
-add_filter('wp_list_pages', 'new_nav_menu_items');
-add_filter('wp_nav_menu_items', 'new_nav_menu_items');
-
 //
 // Other stuff
 //

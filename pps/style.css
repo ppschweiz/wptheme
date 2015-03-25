@@ -4,7 +4,7 @@ Theme URI: https://dev.piratenpartei.ch/projects/wptheme/
 Description: Pirate Party Switzerland
 Author: Stefan Ott
 Author URI: http://www.ott.net/
-Version: 0.5.0
+Version: 0.5.1
 */
 
 :root {
@@ -17,6 +17,9 @@ li, ul {
 	border: 0;
 }
 
+thead { display:table-header-group }
+tfoot { display:table-footer-group }
+ 
 body {
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
 	background-color: #d78215;
@@ -67,6 +70,7 @@ textarea {
 	position: relative;
 	margin: 0 auto;
 	width: 90%;
+        min-width: 65em;
 }
 
 #main {
@@ -270,14 +274,15 @@ div.menu ul.sub-menu li:hover {
 }
 
 #container {
-	background-color: #ffffff;
-	padding-top: 40px;
-	border-right: 1px solid #F2E9DE;
-	-webkit-box-ordinal-group: 1;
-	-webkit-order: 1;
-	-ms-flex-order: 1;
-	-moz-box-ordinal-group: 1;
-	order: 1;
+    width: 80%;
+    background-color: #ffffff;
+    padding-top: 40px;
+    border-right: 1px solid #F2E9DE;
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    -moz-box-ordinal-group: 1;
+    order: 1;
 }
 
 /* the sidebar */
@@ -286,8 +291,8 @@ div.menu ul.sub-menu li:hover {
 	float: right;
 	/*display: inline;*/
 	width: 20%;
-        max-width: 20em;
-        min-width: 10em;
+        max-width: 20em !important;
+        min-width: 15em !important;
 	padding: 40px 25px 30px 25px;
 	background-color: #fbf8f2;
 	-webkit-box-ordinal-group: 2;
@@ -865,4 +870,68 @@ body.page .edit-link {
 }
 #content .video-player {
 	padding: 0;
+}
+
+@media screen and (max-width: 65em) {
+    #main, #header {
+        min-width: auto;
+        width: 100%;
+        border: 0;
+	-webkit-box-shadow: 0;
+	-moz-box-shadow: 0;
+	box-shadow: 0;
+    }
+
+}
+
+@media screen and (max-width: 60em) {
+
+    div.menu > ul > li + li {
+        border-left: 0;
+    }
+    div.menu {
+        display: block;
+    }
+    
+    div.menu > ul {
+        display: block;
+    }
+    
+    div.menu > ul > li {
+        display: block;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 45em) {
+
+    #sidebar {
+        display: none;
+    }
+
+    #container {
+        width: 100%;
+    }
+    
+}
+
+@media print {
+    #bar, #header, #pageend, #endcontent, #sidebar,
+    .entry-utility, .nav-previous, .nav-next {
+        display: none;
+    }
+    #main, #container, #content, #page {
+        border: 0;
+        width: 100%;
+    }
+
+    table {
+        page-break-inside: auto;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+
 }

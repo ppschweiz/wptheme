@@ -18,7 +18,6 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" type="image/x-icon" />
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascript/prototype/prototype.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascript/pps.js"></script>
 <?php
 		/* We add some JavaScript to pages with the comment form
 		 * to support sites with threaded comments (when in use).
