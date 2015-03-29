@@ -10,6 +10,7 @@
  */
 
 get_header();
+get_sidebar("optional");
 get_sidebar();
 ?>
 				<div id="container">

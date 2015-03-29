@@ -1,5 +1,6 @@
 <?php
 	get_header();
+	get_sidebar("optional");
 	get_sidebar();
 
 	$full = $wp_query->query_vars['full'] == 1;

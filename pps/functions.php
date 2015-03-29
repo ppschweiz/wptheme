@@ -102,6 +102,19 @@ function pps_widgets_init()
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	));
+
+	// Area 3, optional to the left on large screens only
+	register_sidebar(array
+	(
+		'name' => __('Optional Widget Area', 'pps'),
+		'id' => 'optional-widget-area',
+		'description' => __('The optional widget area forwide screens only', 'pps'),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	));
+
 }
 
 // Register sidebars by running pps_widgets_init() on the widgets_init hook

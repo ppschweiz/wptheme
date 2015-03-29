@@ -13,6 +13,7 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1" />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
 		<title><?php showPageTitle(); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />

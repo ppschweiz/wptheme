@@ -4,7 +4,7 @@ Theme URI: https://dev.piratenpartei.ch/projects/wptheme/
 Description: Pirate Party Switzerland
 Author: Stefan Ott
 Author URI: http://www.ott.net/
-Version: 0.5.2
+Version: 0.5.5
 */
 
 :root {
@@ -274,10 +274,45 @@ div.menu ul.sub-menu li:hover {
 }
 
 #container {
-    width: 80%;
+    width: 100%;
     background-color: #ffffff;
     padding-top: 40px;
     border-right: 1px solid #F2E9DE;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    -moz-box-ordinal-group: 2;
+    order: 2;
+}
+
+.entry-content {
+/* Does not work well together with sideshow plugin ...
+   To be reenabled, when mozilla supports column-span ...
+  column-count: auto;
+  column-width: 40em;
+  column-gap: 2em;
+  -moz-column-count: auto;
+  -moz-column-width: 40em;
+  -moz-column-gap: 2em;
+  -webkit-column-count: auto;
+  -webkit-column-width: 40em;
+  -webkit-column-gap: 2em;
+  */
+}
+
+/* the sidebar(s) */
+
+#sidebar-right {
+    float: right;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    -moz-box-ordinal-group: 3;
+    order: 3;
+}
+
+#sidebar-left {
+    float: left;
     -webkit-box-ordinal-group: 1;
     -webkit-order: 1;
     -ms-flex-order: 1;
@@ -285,32 +320,23 @@ div.menu ul.sub-menu li:hover {
     order: 1;
 }
 
-/* the sidebar */
-
-#sidebar {
-	float: right;
-	/*display: inline;*/
+.sidebar {
 	width: 20%;
+	padding: 40px 25px 30px 25px;
         max-width: 20em !important;
         min-width: 15em !important;
-	padding: 40px 25px 30px 25px;
 	background-color: #fbf8f2;
-	-webkit-box-ordinal-group: 2;
-	-webkit-order: 2;
-	-ms-flex-order: 2;
-	-moz-box-ordinal-group: 2;
-	order: 2;
 }
 
-#sidebar a {
+.sidebar a {
 	text-decoration: none;
 }
 
-#sidebar a:hover {
+.sidebar a:hover {
 	color: #695037;
 }
 
-#sidebar h3
+.sidebar h3
 {
 	font-size: small;
 	text-transform: uppercase;
@@ -318,15 +344,15 @@ div.menu ul.sub-menu li:hover {
 	margin-bottom: 2px;
 }
 
-#sidebar > ul {
+.sidebar > ul {
 	list-style: none;
 	padding: 0;
 }
-#sidebar > ul > li {
+.sidebar > ul > li {
 	padding-top: 5px;
 }
 
-#sidebar li > ul, #sidebar li > div > ul {
+.sidebar li > ul, .sidebar li > div > ul {
 	color: #666666;
 	list-style: square;
 	list-style-position: outside;
@@ -334,7 +360,7 @@ div.menu ul.sub-menu li:hover {
 	margin: 0;
 }
 
-#sidebar li > ul > li {
+.sidebar li > ul > li {
 	padding: 2px 0;
 }
 
@@ -381,7 +407,7 @@ p.wp-caption-text {
 
 img {
 	border: none;
-	max-width: 100%;
+	max-width: 100% !important;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	height: auto;
@@ -872,12 +898,39 @@ body.page .edit-link {
 	padding: 0;
 }
 
+/* Special Plugins ------------ */
+
+#authorboxbody, .shorten_url {
+    max-width: 100% !important;
+    -webkit-column-span: all; /* Chrome, Safari, Opera */
+    -moz-column-span: all; /* not supported */
+    column-span: all;
+}
+
+#content .slideshow_container {
+    -webkit-column-span: all; /* Chrome, Safari, Opera */
+    -moz-column-span: all; /* not supported */
+    column-span: all;    
+}
+
+#content .slideshow_container {
+    max-width: 100% !important;
+}
+
+/* Special Sizes ------------ */
+
 @media all and (max-width: 660px) {
 
     #ship {
         display: none;
     }
 
+}
+
+@media screen and (max-width: 90em) {
+    #sidebar-left {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 65em) {
@@ -913,7 +966,7 @@ body.page .edit-link {
 
 @media screen and (max-width: 45em) {
 
-    #sidebar {
+    .sidebar {
         display: none;
     }
 
@@ -924,7 +977,7 @@ body.page .edit-link {
 }
 
 @media print {
-    #bar, #header, #pageend, #endcontent, #sidebar,
+    #bar, #header, #pageend, #endcontent, .sidebar,
     .entry-utility, .nav-previous, .nav-next {
         display: none;
     }
